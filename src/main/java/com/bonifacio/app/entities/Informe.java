@@ -29,10 +29,7 @@ public class Informe implements Serializable {
 	private String observacion;
 	private Long asignacion_id;
 	
-	
-	
-	
-	
+
 	public Informe() {
 		
 	}
@@ -103,8 +100,13 @@ public class Informe implements Serializable {
 	public void setAsignacion_id(Long asignacion_id) {
 		this.asignacion_id = asignacion_id;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Informe [infoid=" + infoid + ", sistema=" + sistema + ", descripcion=" + descripcion + ", motivo="
+				+ motivo + ", ot=" + ot + ", horometro=" + horometro + ", evento=" + evento + ", fecha=" + fecha
+				+ ", observacion=" + observacion + ", asignacion_id=" + asignacion_id + "]";
+	}
 	
 	
 	

@@ -82,6 +82,13 @@ public class Cliente implements Serializable {
 		this.telefono = telefono;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [clienid=" + clienid + ", nombre=" + nombre + ", gerente=" + gerente + ", telefono=" + telefono
+				+ ", proyecto=" + proyecto + "]";
+	}
+	
+	
 	
 	
 }

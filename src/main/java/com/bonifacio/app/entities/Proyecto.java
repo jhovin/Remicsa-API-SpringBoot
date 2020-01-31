@@ -118,6 +118,14 @@ public class Proyecto implements Serializable {
 	public void setProcliente(Long procliente) {
 		this.procliente = procliente;
 	}
+
+	@Override
+	public String toString() {
+		return "Proyecto [proid=" + proid + ", nombre=" + nombre + ", distrito=" + distrito + ", provincia=" + provincia
+				+ ", departamento=" + departamento + ", fecha_inicio=" + fecha_inicio + ", fecha_fin=" + fecha_fin
+				+ ", prousuario=" + prousuario + ", procliente=" + procliente + ", asignacion=" + asignacion + "]";
+	}
+	
 	
 
 }
