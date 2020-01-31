@@ -3,7 +3,6 @@ package com.bonifacio.app.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,52 +27,17 @@ public class Proyecto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long proid;
 	private String nombre;
-	private String cliente;
 	private String distrito;
 	private String provincia;
 	private String departamento;
-	private String gerente;
-	private String telefono;
-	private String imagen;
+	private String fecha_inicio;
+	private String fecha_fin;
 	private Long prousuario;
+	private Long procliente;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="minproyecto",referencedColumnName="proid")
-	private List<Mina>mina =new ArrayList<>();
-	
-	
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="supproyecto",referencedColumnName="proid")
-	private List<Superficie>superficie=new ArrayList<>();
-	
-	
-	
-	
-
-	public List<Superficie> getSuperficie() {
-		return superficie;
-	}
-
-
-	public void setSuperficie(List<Superficie> superficie) {
-		this.superficie = superficie;
-	}
-
-
-	public List<Mina> getMina() {
-		return mina;
-	}
-
-
-	public void setMina(List<Mina> mina) {
-		this.mina = mina;
-	}
-
-
-	public Proyecto() {
-		
-	}
-	
+	@JoinColumn(name="proyecto_id",referencedColumnName="proid")
+	private List<Asignacion>asignacion=new ArrayList<>();
 
 	public Long getProid() {
 		return proid;
@@ -89,14 +53,6 @@ public class Proyecto implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(String cliente) {
-		this.cliente = cliente;
 	}
 
 	public String getDistrito() {
@@ -123,28 +79,20 @@ public class Proyecto implements Serializable {
 		this.departamento = departamento;
 	}
 
-	public String getGerente() {
-		return gerente;
+	public String getFecha_inicio() {
+		return fecha_inicio;
 	}
 
-	public void setGerente(String gerente) {
-		this.gerente = gerente;
+	public void setFecha_inicio(String fecha_inicio) {
+		this.fecha_inicio = fecha_inicio;
 	}
 
-	public String getTelefono() {
-		return telefono;
+	public String getFecha_fin() {
+		return fecha_fin;
 	}
 
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getImagen() {
-		return imagen;
-	}
-
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
+	public void setFecha_fin(String fecha_fin) {
+		this.fecha_fin = fecha_fin;
 	}
 
 	public Long getProusuario() {
@@ -155,11 +103,21 @@ public class Proyecto implements Serializable {
 		this.prousuario = prousuario;
 	}
 
-	@Override
-	public String toString() {
-		return "Proyecto [proid=" + proid + ", nombre=" + nombre + ", cliente=" + cliente + ", distrito=" + distrito
-				+ ", provincia=" + provincia + ", departamento=" + departamento + ", gerente=" + gerente + ", telefono="
-				+ telefono + ", imagen=" + imagen + ", prousuario=" + prousuario + "]";
+	public List<Asignacion> getAsignacion() {
+		return asignacion;
 	}
+
+	public void setAsignacion(List<Asignacion> asignacion) {
+		this.asignacion = asignacion;
+	}
+
+	public Long getProcliente() {
+		return procliente;
+	}
+
+	public void setProcliente(Long procliente) {
+		this.procliente = procliente;
+	}
+	
 
 }

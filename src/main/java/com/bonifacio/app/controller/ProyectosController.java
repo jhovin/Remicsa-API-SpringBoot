@@ -65,7 +65,7 @@ public class ProyectosController {
 		
 	}
 	@DeleteMapping("/proyectos/{proid}")
-	 public ResponseEntity<Void>deleteUsuario(@PathVariable(value="proid")Long proid){
+	 public ResponseEntity<Void>deleteProyecto(@PathVariable(value="proid")Long proid){
 		proyectoService.deleteById(proid);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
